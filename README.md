@@ -4,7 +4,7 @@
   <source src="[video.mov](https://robotics-transformer1.github.io/img/RT1-video.mp4)" type="video/mp4">
 </video> -->
 
-<img src="<https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png>", width="200">
+<img src="https://pytorch.org/assets/images/pytorch-logo.png", width="200">
 
 ## Overview
 
