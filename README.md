@@ -1,7 +1,10 @@
 # Robotic Transformer with PyTorch
 
-![Robotic Transformer](https://robotics-transformer1.github.io/img/RT1-video.mp4)
-![Pytorch](https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png)
+<!-- <video width="320" height="240" controls>
+  <source src="[video.mov](https://robotics-transformer1.github.io/img/RT1-video.mp4)" type="video/mp4">
+</video> -->
+
+<img src="<https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png>", width="200">
 
 ## Overview
 
