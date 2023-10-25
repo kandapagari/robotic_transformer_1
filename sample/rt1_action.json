@@ -1,0 +1,8 @@
+{
+  "base_displacement_vector": [0.0, 0.0],
+  "base_displacement_vertical_rotation": [0.0],
+  "gripper_closedness_action": [0.0],
+  "rotation_delta": [-0.034810457, 0.03576408, 0.025837706],
+  "terminate_episode": [0, 1, 0],
+  "world_vector": [0.0005521212, 0.010333654, -0.09352561]
+}

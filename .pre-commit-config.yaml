@@ -1,0 +1,209 @@
+repos:
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.7.5
+    hooks:
+      - id: docformatter
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+        stages: [commit]
+      - id: debug-statements
+      - id: detect-private-key
+        stages: [commit]
+      - id: end-of-file-fixer
+      - id: fix-encoding-pragma
+      - id: no-commit-to-branch
+        args: [-b, master]
+      - id: trailing-whitespace
+  - repo: https://github.com/Carreau/velin
+    rev: 0.0.12
+    hooks:
+      - id: velin
+        args: [--check]
+  - repo: https://github.com/google/yapf
+    rev: v0.40.2
+    hooks:
+      - id: yapf
+        args:
+          [
+            --style,
+            "{based_on_style: pep8, column_limit: 99, split_penalty_after_opening_bracket: 150, split_penalty_excess_character: 25000, split_penalty_for_added_line_split: 150}",
+          ]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        args: [--max-line-length=99]
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      # - id: python-no-eval
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+      - id: python-check-mock-methods
+      - id: text-unicode-replacement-char
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.5.0
+    hooks:
+      - id: yesqa
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v1.6.1"
+    hooks:
+      - id: mypy
+        additional_dependencies: ["types-requests"]
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0 # Use the ref you want to point at
+    hooks:
+      - id: python-use-type-annotations
+  - repo: https://github.com/sondrelg/pep585-upgrade
+    rev: "v1.0.1" # Use the sha / tag you want to point at
+    hooks:
+      - id: upgrade-type-hints
+  - repo: https://github.com/MarcoGorelli/absolufy-imports
+    rev: v0.3.1
+    hooks:
+      - id: absolufy-imports
+  - repo: https://github.com/Carreau/velin
+    rev: "0.0.12"
+    hooks:
+      - id: velin
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.1 # Ruff version.
+    hooks:
+      - id: ruff
+  - repo: https://github.com/mxr/unkey
+    rev: v0.0.1
+    hooks:
+      - id: unkey
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+      - id: hadolint
+  - repo: https://github.com/alan-turing-institute/CleverCSV-pre-commit
+    rev: v0.8.2 # or any later version
+    hooks:
+      - id: clevercsv-standardize
+  - repo: https://github.com/pocc/pre-commit-hooks
+    rev: v1.3.5
+    hooks:
+      - id: clang-format
+        args: [--style=Google]
+      - id: clang-tidy
+      - id: oclint
+      - id: uncrustify
+      - id: cppcheck
+      - id: cpplint
+      - id: include-what-you-use
+  - repo: https://github.com/MarcoGorelli/cython-lint
+    rev: v0.15.0
+    hooks:
+      - id: cython-lint
+      - id: double-quote-cython-strings
+  - repo: https://github.com/shssoichiro/oxipng
+    rev: v9.0.0
+    hooks:
+      - id: oxipng
+  - repo: https://github.com/lovesegfault/beautysh
+    rev: v6.2.1
+    hooks:
+      - id: beautysh
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3 # Use the sha / tag you want to point at
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - prettier@2.1.2
+          - "@prettier/plugin-xml@0.12.0"
+  # - repo: https://github.com/thoughtworks/talisman
+  #   rev: v1.31.0
+  #   hooks:
+  #     - id: talisman-commit
+  #       entry: cmd --githook pre-commit
+  #     - id: talisman-push
+  - repo: https://github.com/peterdemin/pip-compile-multi
+    rev: v2.6.3
+    hooks:
+      - id: pip-compile-multi-verify
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.4
+    hooks:
+      - id: codespell
+        additional_dependencies:
+          - tomli
+  - repo: https://github.com/PrincetonUniversity/blocklint
+    rev: v0.2.4
+    hooks:
+      - id: blocklint
+  - repo: https://github.com/crate-ci/typos
+    rev: varcon-v0.7.2
+    hooks:
+      - id: typos
+  - repo: https://github.com/sirwart/ripsecrets
+    rev: v0.1.7 # Use latest tag on GitHub
+    hooks:
+      - id: ripsecrets
+  - repo: https://github.com/daveshanley/vacuum
+    rev: v0.3.13 # a tag or a commit hash from this repo, see https://github.com/daveshanley/vacuum/releases
+    hooks:
+      - id: vacuum
+  - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
+    rev: v1.6.26.11
+    hooks:
+      - id: actionlint
+        additional_dependencies: [pyflakes>=3.0.1, shellcheck-py>=0.9.0.5]
+  - repo: https://gitlab.com/smop/pre-commit-hooks
+    rev: v1.0.0
+    hooks:
+      - id: check-poetry
+      - id: check-gitlab-ci
+  - repo: https://gitlab.com/devopshq/gitlab-ci-linter
+    rev: v1.0.6
+    hooks:
+      - id: gitlab-ci-linter
+  - repo: https://gitlab.com/jvenom/elixir-pre-commit-hooks
+    rev: v1.0.0 # replace with the version you want to use
+    hooks: # specify the hooks you want to use here
+      - id: mix-format
+      - id: mix-test
+  - repo: https://gitlab.com/adam-moss/pre-commit-trailer
+    rev: v1.0.0 # Use the ref you want to point at
+    hooks:
+      - id: add-pre-commit-config-trailer
+  - repo: https://gitlab.com/adam-moss/pre-commit-ssh-git-signing-key
+    rev: v1.0.0 # Use the ref you want to point at
+    hooks:
+      - id: add-ssh-git-signing-key
+      - id: remove-ssh-git-signing-key
+
+  # - repo: https://github.com/asottile/add-trailing-comma
+  #   rev: v3.1.0
+  #   hooks:
+  #   -   id: add-trailing-comma
+  # - repo: https://github.com/asottile/pyupgrade
+  #   rev: v3.15.0
+  #   hooks:
+  #   -   id: pyupgrade
+  # - repo: https://github.com/PyCQA/bandit
+  #   rev: "1.7.5"
+  #   hooks:
+  #     - id: bandit
+  # - repo: https://github.com/asottile/dead
+  #   rev: "v1.5.2"
+  #   hooks:
+  #     - id: dead
+  # - repo: https://github.com/mwouts/jupytext
+  #   rev: "v1.14.7"
+  #   hooks:
+  #     - id: jupytext
+  #       args: [--set-formats, "ipynb,py:percent,md"]

@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "rt1-torch"
+version = "0.1.0"
+description = ""
+authors = ["Pavan Kumar Kandapagari <pavan.kandapagari@agile-robots.com>"]
+readme = "README.md"
+packages = [{ include = 'robotic_transformer' }]
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+[tool.poetry.group.dev.dependencies]
+build = "^1.0"
+flake8 = "^6.1"
+isort = "^5.12"
+poethepoet = "^0.24"
+pre-commit = "^3.5"
+setuptools-rust = "^1.7"
+yapf = "^0.40"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+efficientnet-pytorch = "^0.7"
+einops = "^0.7"
+gcsfs = "^2023.10.0"
+matplotlib = "^3.8.0"
+opencv-python = "^4.8.1"
+pillow = "^10.1"
+tfds-nightly = "^4.9.3.dev202310060044"
+torch = { version = "^2.1.0+cu118", source = "pytorch" }
+torchvision = { version = "^0.16.0+cu118", source = "pytorch" }
+transformers = "^4.34"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+clean = """
+# Multiline commands including comments work too. Unescaped whitespace is ignored.
+rm -rf .coverage
+       .cache
+       .mypy_cache
+       .ruff_cache
+       .pytest_cache
+       ./**/__pycache__
+       ./**/*.pyc
+       ./**/*.pyo
+       ./**/notebooks/.ipynb_checkpoints
+       ./**/*.spec
+       ./.mypy_cache
+       cov_html
+       build
+       dist
+"""
+lint = "pre-commit run --all-files"
