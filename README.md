@@ -6,7 +6,7 @@
 
 <img loading="lazy" src="https://github.com/lucidrains/robotic-transformer-pytorch/blob/main/rt1.png" alt="robotic transformer">
 
-<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" width="200" alt="pytorch"/>
+<img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="pytorch"/>
 
 ## Overview
 
