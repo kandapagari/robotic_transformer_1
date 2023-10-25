@@ -4,6 +4,8 @@
   <source src="[video.mov](https://robotics-transformer1.github.io/img/RT1-video.mp4)" type="video/mp4">
 </video> -->
 
+<img loading="lazy" src="https://github.com/lucidrains/robotic-transformer-pytorch/blob/main/rt1.png" alt="robotic transformer">
+
 <img loading="lazy" src="https://pytorch.org/assets/images/pytorch-logo.png" width="200" alt="pytorch"/>
 
 ## Overview
